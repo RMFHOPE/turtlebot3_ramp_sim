@@ -15,7 +15,7 @@ catkin_make
 If you have a .world file, place it in `/worlds` and modify the `ttb3_velodyne.launch` file to load your world.
 
 ```xml
-<arg name="world_name" value="$(find ttb3_velodyne)/worlds/your_world_here.world"/>
+<arg name="world_name" value="$(find turtlebot3_ramp_sim)/worlds/your_world_here.world"/>
 ```
 Launch the simulation
 ```ros
