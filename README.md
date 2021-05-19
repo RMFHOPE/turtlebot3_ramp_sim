@@ -6,10 +6,9 @@ Ensure ROS and Gazebo are installed.
 
 ```
 cd ~/catkin_ws/src
-git clone https://github.com/lamlaaaam/ttb3_velodyne.git
+git clone https://github.com/RMFHOPE/turtlebot3_ramp_sim.git
 cd ~/catkin_ws
 catkin_make
-
 ```
 
 ## Running
@@ -20,7 +19,7 @@ If you have a .world file, place it in `/worlds` and modify the `ttb3_velodyne.l
 ```
 Launch the simulation
 ```ros
-roslaunch ttb3_velodyne ttb3_velodyne.launch
+roslaunch turtlebot3_ramp_sim ttb3_velodyne.launch
 ```
 You should see your world in Gazebo and the visualization of the LIDAR in RVIZ.
 

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>ttb3_velodyne</name>
+  <name>turtlebot3_ramp_sim</name>
   <version>0.0.0</version>
-  <description>The ttb3_velodyne package</description>
+  <description>The turtlebot3_ramp_sim package</description>
 
   <maintainer email="hope@todo.todo">hope</maintainer>
 
