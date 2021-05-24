@@ -151,7 +151,7 @@
   <joint name="imu_joint" type="fixed">
     <parent link="base_link"/>
     <child link="imu_link"/>
-    <origin xyz="0.0 0 0.068" rpy="0 0 0"/>
+    <origin xyz="0.0 0 1.0" rpy="0 0 0"/> <!-- z = 0.068 -->
   </joint>
 
   <link name="imu_link"/>
@@ -160,7 +160,7 @@
   <xacro:include filename="$(find turtlebot3_ramp_sim)/urdf/VLP-16.urdf.xacro"/>
   <VLP-16 parent="base_link" name="velodyne" topic="/velodyne_points" hz="10" min_range="0.1">
 <!--hz="10" samples="360" gpu="false" lasers="16" max_range="100">-->
-    <origin xyz="-0 0 1.0" rpy="0 0 0" />
+    <origin xyz="0 0 1.0" rpy="0 0 0" />
   </VLP-16>
 
 </robot>
