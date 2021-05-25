@@ -1,11 +1,13 @@
 <?xml version="1.0" ?>
 <launch>
-  <arg name="x_pos" default="0.0"/>
-  <arg name="y_pos" default="0.0"/>
-  <arg name="z_pos" default="0.0"/>
+  <arg name="x_pos"  default="0.0"/>
+  <arg name="y_pos"  default="0.0"/>
+  <arg name="z_pos"  default="0.0"/>
+  <arg name="sensor" default="velodyne"/>
+  <arg name="world"  default="heights.world"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find turtlebot3_ramp_sim)/worlds/heights.world"/>
+    <arg name="world_name" value="$(find turtlebot3_ramp_sim)/worlds/$(arg world)"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="true"/>
@@ -13,7 +15,7 @@
     <arg name="debug" value="false"/>
   </include>
 
-  <param name="robot_description" command="$(find xacro)/xacro $(find turtlebot3_ramp_sim)/urdf/ttb3_realsense.urdf.xacro" />
+  <param name="robot_description" command="$(find xacro)/xacro $(find turtlebot3_ramp_sim)/urdf/ttb3_$(arg sensor).urdf.xacro" />
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf" args="-urdf -model turtlebot3_waffle -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
@@ -22,6 +24,6 @@
   </node>
 
   <arg name="rviz" default="true"/>
-  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find turtlebot3_ramp_sim)/rviz/ttb3_realsense.rviz" />
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" respawn="false" output="screen" args="-d $(find turtlebot3_ramp_sim)/rviz/ttb3_$(arg sensor).rviz" />
 
 </launch>
