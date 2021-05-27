@@ -11,7 +11,7 @@ git clone https://github.com/pal-robotics/realsense_gazebo_plugin.git
 cd ~/catkin_ws
 catkin_make
 
-sudo apt-get install ros-melodic-hector-gazebo-plugins ros-melodic-velodyne-gazebo-plugins
+sudo apt-get install ros-melodic-hector-gazebo-plugins ros-melodic-velodyne-gazebo-plugins ros-melodic-velodyne-description ros-melodic-turtlebot3-description
 ```
 
 ## Running
