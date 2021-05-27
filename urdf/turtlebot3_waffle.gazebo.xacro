@@ -84,7 +84,7 @@
   <gazebo>
     <plugin name="imu_plugin" filename="libhector_gazebo_ros_imu.so">
       <robotNamespace>/</robotNamespace>
-      <updateRate>500.0</updateRate> 
+      <updateRate>10.0</updateRate> 
       <bodyName>imu_link</bodyName>
       <frameName>imu_link</frameName>
       <topicName>imu/data</topicName>
@@ -128,4 +128,5 @@
     </plugin>
   </gazebo>
 -->
+
 </robot>
