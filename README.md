@@ -1,14 +1,17 @@
-# Turtlebot3 with VLP-16
+# Turtlebot3 with various sensors.
 This repo contains the official Turtlebot3 (Waffle) URDF, mounted with various sensors for SLAM purposes in Gazebo simulation.
 
 ## Setup
-Ensure ROS and Gazebo are installed.
+Ensure ROS and Gazebo are installed. We also require the necessary Gazebo plugins.
 
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/RMFHOPE/turtlebot3_ramp_sim.git
+git clone https://github.com/pal-robotics/realsense_gazebo_plugin.git
 cd ~/catkin_ws
 catkin_make
+
+sudo apt-get install ros-melodic-hector-gazebo-plugins ros-melodic-velodyne-gazebo-plugins
 ```
 
 ## Running
@@ -25,15 +28,3 @@ Parameters:
 
 
 You should see your world in Gazebo and the visualization in RVIZ.
-
-## Specific instructions for RealSense attachment
-In order to run the simulation with RealSense camera, the Gazebo plugin for D435 is required.
-
-```
-cd ~/catkin_ws/src
-git clone https://github.com/pal-robotics/realsense_gazebo_plugin.git
-cd ~/catkin_ws
-catkin_make
-```
-
-Now you can launch the launch file to view the simulation.
